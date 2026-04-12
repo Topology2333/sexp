@@ -1,0 +1,12 @@
+{
+  "name": "sexp",
+  "version": "0.1.0",
+  "description": "A simple S-expression parser/library for JavaScript/TypeScript.",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.4"
+  }
+}
