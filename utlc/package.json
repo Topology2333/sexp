@@ -1,0 +1,36 @@
+{
+  "name": "utlc",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "main": "extension.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "publisher": "PingGuoMiaoMiao",
+  "activationEvents": [],
+  "contributes": {
+    "languages": [
+      {
+        "id": "utlc",
+        "extensions": [
+          ".utlc"
+        ],
+        "configuration": "language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "utlc",
+        "scopeName": "source.utlc",
+        "path": "highlight.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.109.0",
+    "@vscode/vsce": "^3.7.1"
+  }
+}
