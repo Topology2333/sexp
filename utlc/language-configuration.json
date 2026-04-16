@@ -2,6 +2,7 @@
   "brackets": [
     ["(", ")"]
   ],
+  "colorizedBracketPairs": [],
   "autoClosingPairs": [
     ["(", ")"]
   ],
