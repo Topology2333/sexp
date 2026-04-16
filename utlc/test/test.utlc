@@ -1,4 +1,6 @@
-lambda x
-lambda y z
-abc
-123
+x
+(f x)
+(f x y)
+(lambda x x)
+(lambda (x) x)
+(lambda (x) (f x y))
