@@ -1,0 +1,32 @@
+{
+  "name": "sexp",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/illusory0x0"
+  },
+  "publisher": "illusory0x0",
+  "contributes": {
+    "languages": [
+      {
+        "id": "sexp",
+        "extensions": [
+          ".sexp"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sexp",
+        "scopeName": "source.sexp",
+        "path": "hl.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "esbuild-watch",
+      "detail": "esbuild build vscode extension",
+      "type": "shell",
+      "command": "esbuild",
+      "args": [
+        "--watch",
+        "--platform=node",
+        "--format=cjs",
+        "--bundle",
+        "--external:vscode",
+        "${workspaceFolder}/extension.ts",
+        "--outfile=${workspaceFolder}/extension.js"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "isBackground": true,
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "never"
+      },
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "ERROR"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "[watch] build",
+          "endsPattern": "finished"
+        }
+      }
+    }
+  ]
+}

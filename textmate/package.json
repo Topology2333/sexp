@@ -1,0 +1,45 @@
+{
+  "name": "textmate",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "main": "extension.js",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/illusory0x0"
+  },
+  "publisher": "illusory0x0",
+  "activationEvents": [],
+  "icon": "assets/textmate.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "textmate",
+        "extensions": [
+          ".tm"
+        ],
+        "configuration": "language-configuration.json",
+        "icon": {
+          "dark": "assets/textmate.png",
+          "light": "assets/textmate.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "textmate",
+        "scopeName": "source.textmate",
+        "path": "syntax.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.108.0",
+    "@vscode/vsce": "^3.7.1"
+  }
+}

@@ -1,0 +1,10 @@
+deploy: build pack install 
+
+build:
+  esbuild --platform=node --format=cjs --minify --bundle --external:vscode extension.ts --outfile=extension.js
+
+pack:
+  vsce package --no-dependencies --skip-license 
+
+install:
+  code --install-extension textmate-*.vsix
