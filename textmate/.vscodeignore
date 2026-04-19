@@ -1,0 +1,9 @@
+playground/
+*.ts
+
+srs.md
+.vscode
+tsconfig.json
+justfile
+example.tm
+pnpm-lock.yaml
