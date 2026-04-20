@@ -3,11 +3,18 @@ import { parse_expr } from "../parse_expr";
 
 describe("utlc parse_expr", () => {
   it("parses variable: x", () => {
-    expect(parse_expr("x")).toEqual({ tag: "var_", name: "x" });
+    const result = parse_expr("x");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
+      tag: "var_",
+      name: "x",
+    });
   });
 
   it("parses application: (f x)", () => {
-    expect(parse_expr("(f x)")).toEqual({
+    const result = parse_expr("(f x)");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
       tag: "app",
       func: { tag: "var_", name: "f" },
       args: { tag: "var_", name: "x" },
@@ -15,8 +22,9 @@ describe("utlc parse_expr", () => {
   });
 
   it("parses multi-argument application: (f x y)", () => {
-    // (f x y) 解析为左结合：((f x) y)
-    expect(parse_expr("(f x y)")).toEqual({
+    const result = parse_expr("(f x y)");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
       tag: "app",
       func: {
         tag: "app",
@@ -28,7 +36,9 @@ describe("utlc parse_expr", () => {
   });
 
   it("parses lambda without parentheses: (lambda x x)", () => {
-    expect(parse_expr("(lambda x x)")).toEqual({
+    const result = parse_expr("(lambda x x)");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
       tag: "abs",
       param: "x",
       body: { tag: "var_", name: "x" },
@@ -36,7 +46,9 @@ describe("utlc parse_expr", () => {
   });
 
   it("parses lambda with parentheses: (lambda (x) x)", () => {
-    expect(parse_expr("(lambda (x) x)")).toEqual({
+    const result = parse_expr("(lambda (x) x)");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
       tag: "abs",
       param: "x",
       body: { tag: "var_", name: "x" },
@@ -44,7 +56,9 @@ describe("utlc parse_expr", () => {
   });
 
   it("parses nested application inside lambda: (lambda (x) (f x y))", () => {
-    expect(parse_expr("(lambda (x) (f x y))")).toEqual({
+    const result = parse_expr("(lambda (x) (f x y))");
+    expect(result.errors).toEqual([]);
+    expect(result.exprs[0]).toMatchObject({
       tag: "abs",
       param: "x",
       body: {
