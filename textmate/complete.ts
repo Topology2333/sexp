@@ -67,6 +67,7 @@ const make = (out: vscode.OutputChannel): Provider => {
           .keys()
           .filter(x => x != ts)
           .map(x => new Item(x, kind.Variable)),
+        new Item("syntax.json", kind.File)
       ];
       return rslt;
     },
