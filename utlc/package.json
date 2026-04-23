@@ -28,10 +28,17 @@
       }
     ]
   },
+  "scripts": {
+    "build": "esbuild --platform=node --format=cjs --minify --bundle --external:vscode extension.ts --outfile=extension.js",
+    "pack": "vsce package --no-dependencies --skip-license",
+    "install": "code --install-extension utlc-*.vsix",
+    "deploy": "npm run build && npm run pack && npm run install"
+  },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "@types/vscode": "^1.109.0",
     "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.28.0",
     "ts-node": "^10.9.2",
     "vitest": "^4.1.4"
   }

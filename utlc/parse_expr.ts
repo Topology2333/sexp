@@ -197,7 +197,7 @@ function parse(ctx: Context, syn: syntax): exp | null {
 
             for (let i = 1; i < items.length; i++) {
                 const arg = parse(ctx, items[i]);
-                if (arg === null) return null;
+                if (arg === null) continue; // 跳过解析失败的参数，继续收集后续错误
                 const appRange: range = {
                     start: currentFunc.range.start,
                     end: arg.range.end,
