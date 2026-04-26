@@ -13,6 +13,10 @@
     "url": "https://github.com/illusory0x0"
   },
   "publisher": "illusory0x0",
+  "author": {
+    "name": "illusory0x0",
+    "url": "https://github.com/illusory0x0"
+  },
   "activationEvents": [],
   "icon": "assets/textmate.png",
   "contributes": {
